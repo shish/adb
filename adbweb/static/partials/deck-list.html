@@ -1,0 +1,55 @@
+<div class="container-fluid" ng-controller="DeckListCtrl">
+	<div class="row-fluid">
+		<div class="span6">
+
+<section>
+	<div class="ss tightform form">
+		<input type="text" ng-model="query" placeholder="Filter {{decks.length}} decks" />
+	</div>
+
+	<ul class="nodots">
+		<li class="ss" ng-repeat="deck in decks | filter:query | orderBy:title">
+			{{deck.type}} - <a href="#/deck/{{deck.deck_id}}">{{deck.title}}</a>
+		</li>
+	</ul>
+</section>
+
+<section>
+	<h3>Create New Deck</h3>
+	<div class="ss tightform form" ng-controller="DeckCreateCtrl">
+		<table class="form">
+			<tbody>
+				<tr>
+					<td>Deck&nbsp;Title:</td>
+					<td><input type="text" ng-model="deck.title" placeholder=" "></td>
+				</tr>
+			</tbody>
+			<tfoot>
+				<tr>
+					<td colspan="2"><input type="button" value="Create" ng-click="save()"></td>
+				</tr>
+			</tfoot>
+		</table>
+	</div>
+</section>
+
+		</div>
+		<div class="span6">
+
+<section>
+	<h3>About Aoi Deck Builder</h3>
+	<div class="ss">
+		kjhk
+	</div>
+</section>
+
+<section>
+	<h3>Debug</h3>
+	<div class="ss">
+		<pre>{{ decks | json }}</pre>
+	</div>
+</section>
+
+		</div>
+	</div>
+</div>

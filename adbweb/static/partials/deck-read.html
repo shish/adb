@@ -1,0 +1,54 @@
+<div class="container-fluid" ng-controller="DeckReadCtrl">
+	<div class="row-fluid">
+		<div class="span6">
+
+<section>
+	<h3>{{deck.title}}</h3>
+	<ul class="nodots">
+		<li class="ss">Deck Type: {{deck.type}}</li>
+	</ul>
+</section>
+
+<section ng-show="deck.type == 'user'">
+	<h3>Add Card</h3>
+	<div class="ss tightform form">
+        <input type="text" placeholder="TC/S15-014">
+		<input type="button" value="Add">
+	</div>
+</section>
+
+		</div>
+		<div class="span6">
+
+<section>
+    <h3>Cards</h3>
+
+	<div class="ss tightform form">
+		<input type="text" ng-model="query" placeholder="Filter {{deck.cards.length}} cards" />
+	</div>
+
+	<ul class="nodots">
+		<li class="ss" ng-repeat="link in deck.cards | filter:query | orderBy:code">
+            <span ng-show="deck.type == 'user'" style="float: right;">
+                <a ng-click="incLink(link)">+</a> /
+                <a ng-click="decLink(link)">-</a> /
+                <a ng-click="delLink(link)">x</a>
+            </span>
+			<span ng-show="deck.type != 'series'">
+                {{link.number}} x
+            </span>
+            <a href="#/card/{{link.card.card_id}}">{{link.card.title}}</a>
+		</li>
+	</ul>
+</section>
+
+<section>
+	<h3>Debug</h3>
+	<div class="ss">
+		<pre>{{ deck | json }}</pre>
+	</div>
+</section>
+
+		</div>
+	</div>
+</div>

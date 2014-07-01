@@ -1,0 +1,31 @@
+<div class="container-fluid" ng-controller="CardReadCtrl">
+	<div class="row-fluid">
+		<div class="span6">
+
+<section>
+	<h3>Image Goes Here</h3>
+	<div class="ss">
+		blah
+	</div>
+</section>
+
+		</div>
+		<div class="span6">
+
+<section>
+	<h3>{{card.title}}</h3>
+	<ul class="nodots">
+		<li class="ss">Code: {{card.code}}</li>
+	</ul>
+</section>
+
+<section>
+	<h3>Debug</h3>
+	<div class="ss">
+		<pre>{{ card | json }}</pre>
+	</div>
+</section>
+
+		</div>
+	</div>
+</div>

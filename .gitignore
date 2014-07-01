@@ -1,0 +1,10 @@
+.env
+d2.ini
+.coverage
+*.egg-info
+*.swp
+*.sqlite
+*.pyc
+*.pyo
+*.un~
+*.pydevproject
