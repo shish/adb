@@ -18,7 +18,7 @@ requires = [
     'waitress',
     'bcrypt',
 
-    #'psycopg2',
+    'psycopg2',
     'Pillow',
     'dogpile.cache',
 
